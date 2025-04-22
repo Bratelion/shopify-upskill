@@ -4,7 +4,8 @@
   "scripts": {
     "theme:pull": "shopify theme pull --store ante-curkov-dept.myshopify.com --theme 145573642419 --path ./themes/dawn",
     "theme:serve": "shopify theme serve --path ./themes/dawn",
-    "theme:push": "shopify theme push --store ante-curkov-dept.myshopify.com --theme 145573642419 --path ./themes/dawn"
+    "theme:push": "shopify theme push --store ante-curkov-dept.myshopify.com --theme 145573642419 --path ./themes/dawn",
+    "theme:rebase": "sh scripts/git-theme-rebase.sh"
   },
   "dependencies": {
     "shopify": "^3.78.1"
