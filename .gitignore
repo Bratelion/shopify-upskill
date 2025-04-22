@@ -1,0 +1,17 @@
+.DS_Store
+node_modules
+
+# Ignore everything inside themes/
+themes/*
+themes/dawn/*
+themes/dawn/**/*
+
+# Whitelist parent folders (so Git can traverse them)
+!themes/dawn/
+!themes/dawn/**/
+
+
+# Only track specific files (ADD CUSTOM CHANGED FILES BELOW)
+!themes/dawn/sections/announcement-banner.liquid
+!themes/dawn/sections/header-group.json
+!themes/dawn/assets/announcement-banner.css

@@ -1,0 +1,9 @@
+.announcement-banner {
+  display: flex;
+  justify-content: center;
+}
+
+.announcement-banner__text {
+  font-size: 1.4rem;
+  margin: 0.5rem 0
+}

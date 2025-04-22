@@ -1,0 +1,44 @@
+{{ 'announcement-banner.css' | asset_url | stylesheet_tag }}
+
+{% if section.settings.show_banner %}
+    <div class="announcement-banner color-{{ section.settings.color_scheme }}">
+      <p class='announcement-banner__text'>{{ section.settings.banner_text }}</p>
+    </div>
+  {% endif %}
+
+{% schema %}
+{
+  "name": "Announcement banner",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_banner",
+      "label": "Enable announcement banner",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "banner_text",
+      "label": "Banner text",
+      "default": "Banner Text"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-3"
+      },  
+  ],
+  "presets": [
+    {
+      "name": "Free Shipping Banner",
+      "category": "Banner",
+      "settings": {
+        "show_banner": true,
+        "banner_text": "Free shipping until end of April",
+        "color_scheme": "scheme-3"
+      }
+    }
+  ]
+}
+{% endschema %}
