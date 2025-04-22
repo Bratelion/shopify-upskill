@@ -15,8 +15,8 @@
       "type": "announcement-banner",
       "settings": {
         "show_banner": true,
-        "banner_text": "Free shipping until end of April",
-        "color_scheme": "scheme-4"
+        "banner_text": "Free shipping until end of June",
+        "color_scheme": "scheme-5"
       }
     },
     "announcement-bar": {
@@ -30,7 +30,9 @@
           }
         }
       },
-      "block_order": ["announcement-bar-0"],
+      "block_order": [
+        "announcement-bar-0"
+      ],
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
@@ -61,5 +63,9 @@
       }
     }
   },
-  "order": ["announcement-banner", "announcement-bar", "header"]
+  "order": [
+    "announcement-banner",
+    "announcement-bar",
+    "header"
+  ]
 }
