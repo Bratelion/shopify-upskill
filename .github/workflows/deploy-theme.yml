@@ -1,0 +1,37 @@
+name: Deploy Shopify Theme
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📦 Checkout code
+        uses: actions/checkout@v3
+
+      - name: 🧰 Setup Node + Yarn
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: 📦 Enable Corepack (for Yarn 4+)
+        run: corepack enable
+
+      - name: 📦 Install dependencies using Yarn 4
+        run: yarn install
+
+      - name: 🔐 Set environment variables
+        run: |
+          echo "SHOPIFY_CLI_AUTH_TOKEN=${{ secrets.SHOPIFY_CLI_AUTH_TOKEN }}" >> $GITHUB_ENV
+          echo "SHOPIFY_STORE=${{ secrets.SHOPIFY_STORE }}" >> $GITHUB_ENV
+          echo "SHOPIFY_THEME_ID=${{ secrets.SHOPIFY_THEME_ID }}" >> $GITHUB_ENV
+
+      - name: 🧪 Validate theme changes (optional)
+        run: git diff --name-only origin/main~1 | grep '^themes/dawn/' || echo "No theme files changed"
+
+      - name: 🚀 Push theme changes to Shopify
+        run: yarn theme:push
