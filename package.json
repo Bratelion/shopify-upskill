@@ -3,7 +3,7 @@
   "packageManager": "yarn@4.9.0",
   "scripts": {
     "theme:pull": "dotenv -- bash -c 'shopify theme pull --store $SHOPIFY_STORE --theme $SHOPIFY_THEME_ID --path ./themes/dawn'",
-    "theme:serve": "shopify theme serve --path ./themes/dawn",
+    "theme:serve": "shopify theme dev --path ./themes/dawn",
     "theme:push": "dotenv -- bash -c 'shopify theme push --store $SHOPIFY_STORE --theme $SHOPIFY_THEME_ID --password $SHOPIFY_CLI_AUTH_TOKEN --path ./themes/dawn --allow-live --nodelete'",
     "theme:rebase": "sh scripts/git-theme-rebase.sh"
   },
