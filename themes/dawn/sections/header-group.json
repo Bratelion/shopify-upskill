@@ -15,7 +15,7 @@
       "type": "announcement-banner",
       "settings": {
         "show_banner": true,
-        "banner_text": "Free shipping until end of June",
+        "banner_text": "Free shipping for orders over $500",
         "color_scheme": "scheme-5"
       }
     },
